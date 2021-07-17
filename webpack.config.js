@@ -29,7 +29,7 @@ const DocConfig = {
 		],
 	},
 	plugins: [
-		new HtmlWebpackPlugin({ template: "./doc/public/index.html", inject: "false" }),
+		new HtmlWebpackPlugin({ template: "./doc/public/index.html", inject: false }),
 		new CopyPlugin({
 			patterns: [
 				{
