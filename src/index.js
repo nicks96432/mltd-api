@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import App from "./App";
-import http from "http";
 
 if (!process.env.MONGO_URL) {
 	console.log("Missing MONGO_URL.");
@@ -17,7 +16,5 @@ db.once("open", () => {
 
 	const PORT = process.env.PORT || 48763;
 
-	const httpServer = http.createServer(App);
-
-	httpServer.listen(PORT, () => console.log(`Server is listening at port ${PORT}.`));
+	App.listen(PORT, () => console.log(`Server is listening at port ${PORT}.`));
 });
