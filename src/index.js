@@ -1,18 +1,15 @@
 import mongoose from "mongoose";
 import App from "./App";
+import config from "./config";
 
-if (!process.env.MONGO_URL) {
-	console.log("Missing MONGO_URL.");
-	process.exit(1);
-}
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 
 db.on("error", (error) => console.error(error));
 
 db.once("open", () => {
-	console.log("connected");
+	console.log("connected to mongodb");
 
 	const PORT = process.env.PORT || 48763;
 

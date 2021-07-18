@@ -1,19 +1,19 @@
-import Idol from "./schema/Idol";
+import Idol from "../schema/Idol";
 
 const IdolController = {
-	getIdols: async (_, res) => {
-		try {
-			const idols = await Idol.find({});
-			res.status(200).json(idols);
-		} catch (err) {
-			res.status(500).send(err);
-		}
-	},
 	getIdol: async (req, res) => {
 		try {
 			let idol = await Idol.findOne({ _id: req.params.idolID });
 			if (idol !== null) res.status(200).json(idol);
 			else res.status(404).send(`idol ${req.params.idolID} not found`);
+		} catch (err) {
+			res.status(500).send(err);
+		}
+	},
+	getIdols: async (_, res) => {
+		try {
+			const idols = await Idol.find({});
+			res.status(200).json(idols);
 		} catch (err) {
 			res.status(500).send(err);
 		}

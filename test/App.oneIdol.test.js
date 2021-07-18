@@ -1,18 +1,13 @@
 import supertest from "supertest";
-import { connectMongodb, closeMongodb, clearData } from "./MongoMemoryServer";
+import { startServer, stopServer, clearData } from "./MongoMemoryServer";
 import App from "../src/App";
 
 describe("test idol API with 1 idol", () => {
-	let httpServer;
-	beforeAll(async () => {
-		await connectMongodb();
-		httpServer = App.listen(process.env.PORT || 1016);
-	});
+	beforeAll(async () => await startServer());
 
 	afterAll(async () => {
 		await clearData();
-		await closeMongodb();
-		httpServer.close();
+		await stopServer();
 	});
 
 	it("should return an array of 0 idol for GET /mltd/m1/idols", (done) => {

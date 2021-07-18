@@ -6,19 +6,18 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 const DocConfig = {
-	mode: "production",
 	target: "node",
 	entry: {
 		index: "./doc/src/index",
 	},
 	output: {
-		path: path.join(__dirname, "/build/static"),
+		path: path.join(__dirname, "/build/static/doc"),
 		filename: "[name].bundle.js",
 	},
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: { loader: "babel-loader" },
 			},
@@ -29,7 +28,7 @@ const DocConfig = {
 		],
 	},
 	plugins: [
-		new HtmlWebpackPlugin({ template: "./doc/public/index.html", inject: false }),
+		new HtmlWebpackPlugin({ template: "./doc/public/index.html" }),
 		new CopyPlugin({
 			patterns: [
 				{
@@ -58,14 +57,18 @@ const ServerConfig = {
 	module: {
 		rules: [
 			{
-				test: /\.m?js$/,
+				test: /\.js$/,
 				exclude: /node_modules/,
 				use: "babel-loader",
-			}
+			},
 		],
 	},
 };
 
-if (process.env.NODE_ENV === "development") ServerConfig.plugins=[new NodemonPlugin()];
+if (process.env.NODE_ENV === "development")
+	ServerConfig.plugins = [
+		new CopyPlugin({ patterns: [{ from: "./.env", to: "../" }] }),
+		new NodemonPlugin(),
+	];
 
 module.exports = [DocConfig, ServerConfig];

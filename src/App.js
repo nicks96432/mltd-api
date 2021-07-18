@@ -1,24 +1,19 @@
 import express from "express";
-import IdolController from "./IdolController";
-import CardController from "./CardController";
 import helmet from "helmet";
+import IdolController from "./controller/IdolController";
+import CardController from "./controller/CardController";
+import "./config";
 
 const App = express();
 
-App.use(
-	helmet({
-		contentSecurityPolicy: false,
-	})
-);
-App.use(express.static("./static"));
+App.use(helmet({ contentSecurityPolicy: false }));
+App.use(express.static(process.env.NODE_ENV === "production" ? "./static" : "./build/static"));
 
-App.get("/mltd/v1/idols", IdolController.getIdols);
+App.route("/mltd/v1/idols")
+	.get(IdolController.getIdols)
+	.post(express.json(), IdolController.postIdol);
 
-App.post("/mltd/v1/idols", express.json(), IdolController.postIdol);
-
-App.get("/mltd/v1/idols/:idolID", IdolController.getIdol);
-
-App.delete("/mltd/v1/idols/:idolID", IdolController.deleteIdol);
+App.route("/mltd/v1/idols/:idolID").get(IdolController.getIdol).delete(IdolController.deleteIdol);
 
 App.get("/mltd/v1/cards", CardController.getCards);
 

@@ -1,0 +1,14 @@
+name: automatically move project card when issue is closed
+on:
+    issues:
+        types:
+            - closed
+jobs:
+    moveCard:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Move Project Card
+              uses: peter-evans/create-or-update-project-card@v1.1.4
+              with:
+                  project-name: 後端進度
+                  column-name: 已完成
