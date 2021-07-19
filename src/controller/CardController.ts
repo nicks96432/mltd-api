@@ -1,4 +1,4 @@
-import Card from "../schema/Card";
+import Card from "../model/CardModel";
 
 // TODO: 卡片API
 const CardController = {

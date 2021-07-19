@@ -1,11 +1,31 @@
 import mongoose from "mongoose";
 
-const idolSchema = new mongoose.Schema(
+interface Idol {
+	id: number;
+	type: "Princess" | "Fairy" | "Angel" | "Guest";
+	name_zh: string;
+	name_jp: string;
+	age: number;
+	height: number;
+	weight: number;
+	birthday: Date;
+	measurements: { bust: number; waist: number; hips: number };
+	bloodtype: "A" | "B" | "O" | "AB";
+	leftHand: boolean;
+	origin: string;
+	hobby: string;
+	trick: string;
+	like: string;
+	CV_zh: string;
+	CV_jp: string;
+}
+
+const IdolSchema = new mongoose.Schema<Idol>(
 	{
-		_id: { type: Number, required: true },
-		type: { type: String, enum: ["Princess", "Fairy", "Angel"], required: true },
-		name_zh: { type: String, required: true, dropDups: true },
-		name_jp: { type: String, required: true, dropDups: true },
+		id: { type: Number, required: true, unique: true },
+		type: { type: String, enum: ["Princess", "Fairy", "Angel", "Guest"], required: true },
+		name_zh: { type: String, required: true, unique: true },
+		name_jp: { type: String, required: true, unique: true },
 		age: { type: Number, required: true },
 		height: { type: Number, required: true },
 		weight: { type: Number, required: true },
@@ -30,14 +50,6 @@ const idolSchema = new mongoose.Schema(
 	{ strict: "throw" }
 );
 
-idolSchema.set("toJSON", {
-	transform: (_, ret) => {
-		ret.id = ret._id;
-		delete ret._id;
-		delete ret.__v;
-	},
-});
+const IdolModel = mongoose.model<Idol>("Idol", IdolSchema);
 
-const Idol = mongoose.model("Idol", idolSchema);
-
-export default Idol;
+export default IdolModel;

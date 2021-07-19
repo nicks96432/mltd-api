@@ -8,18 +8,34 @@ const CopyPlugin = require("copy-webpack-plugin");
 const DocConfig = {
 	target: "node",
 	entry: {
-		index: "./doc/src/index",
+		index: "./docs/src/index",
 	},
 	output: {
-		path: path.join(__dirname, "/build/static/doc"),
+		path: path.join(__dirname, "/build/static/docs"),
 		filename: "[name].bundle.js",
 	},
 	module: {
 		rules: [
 			{
-				test: /\.jsx?$/,
+				test: /\.ts$/,
 				exclude: /node_modules/,
-				use: { loader: "babel-loader" },
+				use: {
+					loader: "babel-loader",
+					options: { presets: ["@babel/preset-typescript", "@babel/preset-env"] },
+				},
+			},
+			{
+				test: /\.tsx$/,
+				use: {
+					loader: "babel-loader",
+					options: {
+						presets: [
+							"@babel/preset-typescript",
+							"@babel/preset-react",
+							"@babel/preset-env",
+						],
+					},
+				},
 			},
 			{
 				test: /\.scss$/,
@@ -28,11 +44,11 @@ const DocConfig = {
 		],
 	},
 	plugins: [
-		new HtmlWebpackPlugin({ template: "./doc/public/index.html" }),
+		new HtmlWebpackPlugin({ template: "./docs/public/index.html" }),
 		new CopyPlugin({
 			patterns: [
 				{
-					from: "./doc/public",
+					from: "./docs/public",
 					to: "./",
 					globOptions: {
 						ignore: ["**/*.html"],
@@ -42,12 +58,13 @@ const DocConfig = {
 		}),
 		new MiniCssExtractPlugin(),
 	],
+	resolve: { extensions: [".ts", ".tsx", ".js", ".jsx"] },
 };
 
 const ServerConfig = {
 	target: "node",
 	entry: {
-		index: "./src/index",
+		index: "./src/index.ts",
 	},
 	externals: [nodeExternals()],
 	output: {
@@ -57,18 +74,25 @@ const ServerConfig = {
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.ts$/,
 				exclude: /node_modules/,
-				use: "babel-loader",
+				use: {
+					loader: "babel-loader",
+					options: {
+						presets: ["@babel/preset-typescript", "@babel/preset-env"],
+					},
+				},
 			},
 		],
 	},
+	resolve: { extensions: [".ts"] },
 };
 
-if (process.env.NODE_ENV === "development")
-	ServerConfig.plugins = [
-		new CopyPlugin({ patterns: [{ from: "./.env", to: "../" }] }),
-		new NodemonPlugin(),
-	];
-
-module.exports = [DocConfig, ServerConfig];
+module.exports = (_env, options) => {
+	if (options.mode === "development")
+		ServerConfig.plugins = [
+			new CopyPlugin({ patterns: [{ from: "./.env", to: "../" }] }),
+			new NodemonPlugin(),
+		];
+	return [DocConfig, ServerConfig];
+};
