@@ -1,6 +1,9 @@
-name: automatically move project card when issue is closed
+name: automatically move project card when issue/PR is closed
 on:
     issues:
+        types:
+            - closed
+    pull_request:
         types:
             - closed
 jobs:

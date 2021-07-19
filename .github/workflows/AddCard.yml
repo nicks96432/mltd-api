@@ -1,9 +1,15 @@
-name: automatically add new/reopened issue to project
+name: automatically add new/reopened issue/PR to project
 on:
     issues:
         types:
             - opened
             - reopened
+            - unassigned
+    pull_request:
+        types:
+            - opened
+            - reopened
+            - unassigned
 jobs:
     createCard:
         runs-on: ubuntu-latest

@@ -1,5 +1,8 @@
 # MLTD-API
 
+[![Test](https://github.com/nicks96432/mltd-api/actions/workflows/Test.yml/badge.svg?branch=main)](https://github.com/nicks96432/mltd-api/actions/workflows/Test.yml)
+[![CodeQL Analysis](https://github.com/nicks96432/mltd-api/actions/workflows/CodeQLAnalysis.yml/badge.svg)](https://github.com/nicks96432/mltd-api/actions/workflows/CodeQLAnalysis.yml)
+
 偶像大師百萬人演唱會(MLTD)資訊API  
 使用mongodb作為資料庫，express作為API本體  
 另外還用了JOSE保護POST和DELETE，必須使用特定的帳號及密碼才可使用這兩個method(還在做)  

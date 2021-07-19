@@ -1,4 +1,4 @@
-name: Run tests
+name: Test
 on:
     push:
         branches:
@@ -24,5 +24,3 @@ jobs:
               run: yarn --frozen-lockfile
             - name: Run tests
               run: yarn test
-              env:
-                SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
