@@ -25,11 +25,7 @@ App.register(async (instance, _opts, done) => {
 	try {
 		await app.prepare();
 		instance
-			.get("/_next/*", async (request, reply) => {
-				await handler(request.raw, reply.raw);
-				reply.sent = true;
-			})
-			.all("/", async (request, reply) => {
+			.all("/*", async (request, reply) => {
 				await handler(request.raw, reply.raw);
 				reply.sent = true;
 			})

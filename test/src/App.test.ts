@@ -25,4 +25,26 @@ describe("test MLTD idol API", () => {
 			expect(response.body).toEqual(JSON.stringify(idolArray[id - 1]));
 		}
 	}, 15000);
+
+	it("testing bad requests", async () => {
+		const invalidIdolIDs = [
+			"starburst stream",
+			"AAAAAAAA",
+			"0123456789",
+			"星爆氣流斬",
+			"0000000000001",
+			"       2",
+			"4.8763",
+			"[1]",
+			"[object Object]",
+			"console.log(0.0)",
+		];
+		invalidIdolIDs.forEach(async (id) => {
+			const response = await App.inject({ method: "GET", url: `/mltd/v1/idols/${id}` });
+			expect(response.statusCode).toEqual(400);
+			expect(response.body).toEqual(
+				JSON.stringify({ status: 400, message: `invalid idol ID: ${id}` })
+			);
+		});
+	});
 });

@@ -1,21 +1,28 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import { IdolModel } from "../models";
+import App from "../App";
 
 export const IdolController = {
 	getIdol: async (
-		request: FastifyRequest<{ Params: { idolID: number } }>,
+		request: FastifyRequest<{ Params: { idolID: string } }>,
 		reply: FastifyReply
 	) => {
+		const idolID = request.params.idolID;
+		const id = parseInt(idolID, 10);
+		if (idolID === "") {
+			await IdolController.getIdols(request, reply);
+			return;
+		} else if (!/^[1-9]\d*$/.test(idolID)) {
+			reply.status(400).send({ status: 400, message: `invalid idol ID: ${idolID}` });
+			return;
+		}
 		try {
-			let idol = await IdolModel.findOne(
-				{ id: request.params.idolID },
-				{ _id: false, __v: false }
-			);
+			let idol = await IdolModel.findOne({ id }, { _id: false, __v: false });
 			if (idol !== null) reply.status(200).send(idol);
-			else reply.status(404).send(`idol ${request.params.idolID} not found`);
+			else reply.status(404).send({ status: 404, message: `idol ${id} not found` });
 		} catch (err) {
-			reply.status(500).send("server internal error");
-			console.error(err);
+			reply.status(500).send({ status: 500, message: "server internal error" });
+			App.log.error(err);
 		}
 	},
 	getIdols: async (_req: FastifyRequest, reply: FastifyReply) => {
@@ -23,8 +30,8 @@ export const IdolController = {
 			const idols = await IdolModel.find({}, { _id: false, __v: false }).sort({ id: 1 });
 			reply.status(200).send(idols);
 		} catch (err) {
-			reply.status(500).send(err);
-			console.error(err);
+			reply.status(500).send({ status: 500, message: "server internal error" });
+			App.log.error(err);
 		}
 	},
 };
