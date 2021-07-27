@@ -1,33 +1,29 @@
-import dotenv from "dotenv";
 import Joi from "joi";
-import mongoose from "mongoose";
+import dotenv from "dotenv";
+import type { Config } from "./types";
 
-mongoose.set("useCreateIndex", true);
+if (process.env.NODE_ENV !== "production") dotenv.config();
 
-if (process.env.NODE_ENV !== "production") {
-	dotenv.config({ path: process.env.NODE_ENV === "test" ? "./.env.test" : "./.env" });
-}
+const env = {
+	nodeEnv: process.env.NODE_ENV,
+	mongoUrl: process.env.MONGO_URL,
+	port: process.env.PORT,
+};
 
-const { error, value } = Joi.object()
-	.keys({
-		NODE_ENV: Joi.string().valid("production", "development", "test").required(),
-		PORT: Joi.number().positive().default(48763),
-		MONGO_URL: Joi.string().required(),
-		PUBLIC_KEY: Joi.string().required(),
-		PRIVATE_KEY: Joi.string().required(),
-	})
-	.unknown()
-	.required()
-	.validate(process.env);
+let schema: any = {
+	nodeEnv: Joi.string().valid("production", "development", "test").required(),
+	port: Joi.number().positive().default(48763),
+};
+if (process.env.NODE_ENV !== "test") schema.mongoUrl = Joi.string().required();
+
+let { error, value } = Joi.object().keys(schema).unknown().required().validate(env);
 
 if (error) throw new Error(`config validation failed: ${error.message}`);
 
-const config = {
-	nodeEnv: value.NODE_ENV,
-	mongoUrl: value.MONGO_URL,
-	port: value.PORT,
-	publicKey: value.PUBLIC_KEY,
-	privateKey: value.PRIVATE_KEY,
+const config: Config = {
+	nodeEnv: value.nodeEnv,
+	mongoUrl: value.mongoUrl,
+	port: value.port,
 };
 
 export default config;

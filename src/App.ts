@@ -1,33 +1,58 @@
-import express, { Express } from "express";
-import { Server } from "http";
-import helmet from "helmet";
-import IdolController from "./controller/IdolController";
-import CardController from "./controller/CardController";
+import Next from "next";
+import fastify from "fastify";
+import fastifyCors from "fastify-cors";
+import fastifyHelmet from "fastify-helmet";
+import fastifyCompress from "fastify-compress";
+import fastifyRateLimit from "fastify-rate-limit";
+import Config from "./Config";
+import routes from "./routes";
 
-class App {
-	private app: Express;
+const dev = Config.nodeEnv !== "production";
+const test = Config.nodeEnv === "test";
 
-	constructor(nodeEnv: string = "production") {
-		this.app = express();
+const App = fastify({
+	logger: {
+		level: test ? "error" : "info",
+		prettyPrint: { colorize: dev },
+		// TODO: 等fastify更新再uncomment這行
+		// file: dev ? undefined : "./fastify.log",
+	},
+});
 
-		this.app.use(helmet({ contentSecurityPolicy: false }));
-		this.app.use(express.static(nodeEnv === "production" ? "./static" : "./build/static"));
-
-		this.app
-			.route("/mltd/v1/idols")
-			.get(IdolController.getIdols)
-			.post(express.json(), IdolController.postIdol);
-
-		this.app
-			.route("/mltd/v1/idols/:idolID")
-			.get(IdolController.getIdol)
-			.delete(IdolController.deleteIdol);
-
-		this.app.get("/mltd/v1/cards", CardController.getCards);
+App.register(async (instance, _opts, done) => {
+	const app = Next({ dev });
+	const handler = app.getRequestHandler();
+	try {
+		await app.prepare();
+		instance
+			.get("/_next/*", async (request, reply) => {
+				await handler(request.raw, reply.raw);
+				reply.sent = true;
+			})
+			.all("/", async (request, reply) => {
+				await handler(request.raw, reply.raw);
+				reply.sent = true;
+			})
+			.setNotFoundHandler(async (request, reply) => {
+				await app.render404(request.raw, reply.raw);
+				reply.sent = true;
+			});
+		done();
+	} catch (err) {
+		done(err);
 	}
+});
 
-	public listen = (port: number, callback?: () => void): Server =>
-		this.app.listen(port, callback);
-}
+App.register(fastifyCors)
+	.register(fastifyHelmet, { contentSecurityPolicy: false })
+	.register(fastifyCompress, { encodings: ["br", "gzip", "deflate", "identity"] })
+	.register(routes)
+	.register(fastifyRateLimit, {
+		max: 5000,
+		ban: 500000,
+		timeWindow: 60000,
+		allowList: ["127.0.0.1"],
+		cache: 10000,
+	});
 
 export default App;
