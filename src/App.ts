@@ -51,7 +51,7 @@ App.register(fastifyCors)
 		max: 5000,
 		ban: 500000,
 		timeWindow: 60000,
-		allowList: ["127.0.0.1"],
+		allowList: ["0.0.0.0"],
 		cache: 10000,
 	});
 

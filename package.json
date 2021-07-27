@@ -13,7 +13,7 @@
 		"build": "webpack --mode production",
 		"postbuild": "next build",
 		"test": "jest --silent --verbose --forceExit",
-		"clean": "rimraf .next build fastify.log next-dev.d.ts"
+		"clean": "rimraf .next build fastify.log next-env.d.ts"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.14.8",

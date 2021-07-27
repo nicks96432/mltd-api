@@ -7,7 +7,7 @@ mongoose.set("useCreateIndex", true);
 mongoose.connection.once("open", async () => {
 	console.log("connected to mongodb");
 	try {
-		await App.listen(Config.port);
+		await App.listen(Config.port, "0.0.0.0");
 	} catch (err) {
 		App.log.error(err);
 		process.exit(1);

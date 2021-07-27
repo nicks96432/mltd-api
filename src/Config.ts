@@ -1,8 +1,7 @@
 import Joi from "joi";
-import dotenv from "dotenv";
 import type { Config } from "./types";
 
-if (process.env.NODE_ENV !== "production") dotenv.config();
+if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
 const env = {
 	nodeEnv: process.env.NODE_ENV,
