@@ -1,15 +1,29 @@
-# MLTD-API
+<p align="center">
+  <img src="https://github.com/nicks96432/mltd-api/blob/main/public/logo512.png?raw=true" height="384">
+</p>
 
-[![Test](https://github.com/nicks96432/mltd-api/actions/workflows/Test.yml/badge.svg?branch=main)](https://github.com/nicks96432/mltd-api/actions/workflows/Test.yml)
-[![CodeQL Analysis](https://github.com/nicks96432/mltd-api/actions/workflows/CodeQLAnalysis.yml/badge.svg)](https://github.com/nicks96432/mltd-api/actions/workflows/CodeQLAnalysis.yml)
-[![Dependencies Watch](https://status.david-dm.org/gh/nicks96432/mltd-api.svg)](https://david-dm.org/nicks96432/mltd-api)
-[![Dependencies Watch](https://status.david-dm.org/gh/nicks96432/mltd-api.svg?type=dev)](https://david-dm.org/nicks96432/mltd-api?type=dev)  
+<p align="center">
+  偶像大師 百萬人演唱會！ 劇場時光(MLTD) 遊戲資訊API
+</p>
 
-偶像大師 百萬人演唱會(MLTD) 資訊API  
+<p align="center">
+  <a href="https://github.com/nicks96432/mltd-api/actions/workflows/Test.yml">
+    <img src="https://github.com/nicks96432/mltd-api/actions/workflows/Test.yml/badge.svg">
+  </a>
+  <a href="https://github.com/nicks96432/mltd-api/actions/workflows/CodeQLAnalysis.yml">
+    <img src="https://github.com/nicks96432/mltd-api/actions/workflows/CodeQLAnalysis.yml/badge.svg">
+  </a>
+  <a href="https://david-dm.org/nicks96432/mltd-api">
+    <img src="https://status.david-dm.org/gh/nicks96432/mltd-api.svg">
+  </a>
+  <a href="https://david-dm.org/nicks96432/mltd-api?type=dev">
+    <img src="https://status.david-dm.org/gh/nicks96432/mltd-api.svg?type=dev">
+  </a>
+</p>
+
 使用mongodb作為資料庫，fastify作為API本體  
-說明文檔使用react框架，並使用nextJS做SSR  
+說明文檔使用react框架，並使用Next.js做SSR  
 測試的部分使用jest及mongodb-memory-server  
-目前仍在施工中
 
 ## 用法
 
