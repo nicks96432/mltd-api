@@ -11,44 +11,46 @@ const dev = Config.nodeEnv !== "production";
 const test = Config.nodeEnv === "test";
 
 const App = fastify({
-	logger: {
-		level: test ? "error" : "info",
-		prettyPrint: { colorize: dev },
-		// TODO: 等fastify更新再uncomment這行
-		// file: dev ? undefined : "./fastify.log",
-	},
+    logger: {
+        level: test ? "error" : "info",
+        prettyPrint: { colorize: dev },
+        // TODO: 等fastify更新再uncomment這行
+        // file: dev ? undefined : "./fastify.log",
+    },
 });
 
 App.register(async (instance, _opts, done) => {
-	const app = Next({ dev });
-	const handler = app.getRequestHandler();
-	try {
-		await app.prepare();
-		instance
-			.all("/*", async (request, reply) => {
-				await handler(request.raw, reply.raw);
-				reply.sent = true;
-			})
-			.setNotFoundHandler(async (request, reply) => {
-				await app.render404(request.raw, reply.raw);
-				reply.sent = true;
-			});
-		done();
-	} catch (err) {
-		done(err);
-	}
+    const app = Next({ dev });
+    const handler = app.getRequestHandler();
+    try {
+        await app.prepare();
+        instance
+            .all("/*", async (request, reply) => {
+                await handler(request.raw, reply.raw);
+                reply.sent = true;
+            })
+            .setNotFoundHandler(async (request, reply) => {
+                await app.render404(request.raw, reply.raw);
+                reply.sent = true;
+            });
+        done();
+    } catch (err) {
+        done(err);
+    }
 });
 
 App.register(fastifyCors)
-	.register(fastifyHelmet, { contentSecurityPolicy: false })
-	.register(fastifyCompress, { encodings: ["br", "gzip", "deflate", "identity"] })
-	.register(routes)
-	.register(fastifyRateLimit, {
-		max: 5000,
-		ban: 500000,
-		timeWindow: 60000,
-		allowList: ["0.0.0.0"],
-		cache: 10000,
-	});
+    .register(fastifyHelmet, { contentSecurityPolicy: false })
+    .register(fastifyCompress, {
+        encodings: ["br", "gzip", "deflate", "identity"],
+    })
+    .register(routes)
+    .register(fastifyRateLimit, {
+        max: 5000,
+        ban: 500000,
+        timeWindow: 60000,
+        allowList: ["0.0.0.0"],
+        cache: 10000,
+    });
 
 export default App;

@@ -1,5 +1,5 @@
 export interface Config {
-	nodeEnv: string;
-	mongoUrl?: string;
-	port: number;
+    nodeEnv: string;
+    mongoUrl?: string;
+    port: number;
 }

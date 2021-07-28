@@ -9,21 +9,21 @@ for (const idol of Object.values(idols)) idolArray.push(idol);
 const mongod = new MongoMemoryServer();
 
 export const setupMongoDB = async () => {
-	await mongod.start();
-	const uri = mongod.getUri();
-	mongoose.set("useCreateIndex", true);
-	await mongoose.connect(uri, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	});
-	await IdolModel.insertMany(idolArray);
+    await mongod.start();
+    const uri = mongod.getUri();
+    mongoose.set("useCreateIndex", true);
+    await mongoose.connect(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+    await IdolModel.insertMany(idolArray);
 };
 
 export const closeMongoDB = async () => {
-	try {
-		await mongoose.connection.close();
-		await mongod.stop(true);
-	} catch (err) {
-		console.error(err);
-	}
+    try {
+        await mongoose.connection.close();
+        await mongod.stop(true);
+    } catch (err) {
+        console.error(err);
+    }
 };
