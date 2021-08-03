@@ -1,0 +1,29 @@
+@import "../../../../pages/global";
+
+.operation-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    td,
+    th {
+        vertical-align: baseline;
+    }
+
+    > .operation-table-title {
+        font-size: 1.2em;
+        font-weight: bolder;
+        text-align: unset;
+        margin: 1rem;
+    }
+
+    .operation-table-head > th {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $color-primary;
+        text-align: unset;
+        font-weight: unset;
+
+        &.operation-table-head-name {
+            width: 25%;
+        }
+    }
+}

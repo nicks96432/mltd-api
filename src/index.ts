@@ -17,5 +17,5 @@ mongoose.connection.once("open", async () => {
 mongoose.connect(Config.mongoUrl!, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
+    useCreateIndex: true
 });

@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import "./App.scss";
+import "./index.scss";
 
 const index = ({ Component, pageProps }: AppProps) => (
     <Component {...pageProps} />

@@ -1,23 +1,17 @@
-import type { NextPage } from "next";
 import Head from "next/head";
+import type { NextPage } from "next";
+import App from "../components/App";
+import NotFoundPage from "../components/NotFoundPage";
 
-const NotFoundPage: NextPage = () => (
+const _404: NextPage = () => (
     <>
         <Head>
-            <title>MLTD API doc</title>
-            <meta charSet="utf-8" />
-            <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-            />
-            <link rel="icon" href="/favicon.ico" />
-            <link rel="apple-touch-icon" href="/logo192.png" />
-            <link rel="manifest" href="/manifest.json" />
+            <title>MLTD API | 404</title>
         </Head>
-        <main>
-            <div className="app">404</div>
-        </main>
+        <App>
+            <NotFoundPage />
+        </App>
     </>
 );
 
-export default NotFoundPage;
+export default _404;

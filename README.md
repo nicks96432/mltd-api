@@ -24,13 +24,13 @@
     </a>
 </p>
 
-使用mongodb作為資料庫，fastify作為API本體  
-說明文檔使用react框架，並使用Next.js做SSR  
-測試的部分使用jest及mongodb-memory-server  
+使用 mongodb 作為資料庫，fastify 作為 API 本體  
+說明文檔使用 react 框架，並使用 Next.js 做 SSR  
+測試的部分使用 jest 及 mongodb-memory-server
 
 ## 用法
 
 使用前必須先設定環境變數：
 
-1. `MONGO_URL`：MLTD資料庫的mongodb位址
-2. `PORT`(選用)：決定伺服器要跑在哪個port，預設是48763
+1. `MONGO_URL`：MLTD 資料庫的 mongodb 位址
+2. `PORT`(選用)：決定伺服器要跑在哪個 port，預設是 48763

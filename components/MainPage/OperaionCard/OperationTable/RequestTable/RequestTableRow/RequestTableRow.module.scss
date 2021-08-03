@@ -1,0 +1,23 @@
+@import "../../../../../../pages/global.scss";
+
+.parameter-table-row {
+    td {
+        padding: 0.5rem 0;
+
+        .parameter-name-wrapper {
+            display: flex;
+            flex-wrap: wrap-reverse;
+
+            .parameter-name {
+                font-family: $code-font;
+            }
+
+            .required {
+                margin-left: 0.5rem;
+                font-size: small;
+                font-weight: bold;
+                color: #7e6ca8;
+            }
+        }
+    }
+}

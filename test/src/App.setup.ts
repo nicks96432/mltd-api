@@ -14,7 +14,7 @@ export const setupMongoDB = async () => {
     mongoose.set("useCreateIndex", true);
     await mongoose.connect(uri, {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
+        useUnifiedTopology: true
     });
     await IdolModel.insertMany(idolArray);
 };

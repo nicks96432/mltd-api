@@ -48,5 +48,5 @@ export const IdolController = {
                 .send({ status: 500, message: "server internal error" });
             App.log.error(err);
         }
-    },
+    }
 };

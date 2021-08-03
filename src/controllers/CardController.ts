@@ -2,7 +2,7 @@
 
 // TODO: 卡片API
 export const CardController = {
-    getCards: () => {},
+    getCards: () => {}
 };
 
 export default CardController;

@@ -1,0 +1,35 @@
+@import "../../pages/global";
+
+.app-header {
+    width: 100%;
+    background-color: $color-primary;
+    color: #ffffff;
+
+    #navbar {
+        display: flex;
+        width: $width;
+        padding: 0.25rem 0;
+        align-items: center;
+
+        .app-title {
+            font-size: 2em;
+            padding: 0.5rem 0;
+        }
+
+        .app-header-blank {
+            flex: auto;
+        }
+
+        .app-header-icons {
+            a {
+                margin: 0.5rem;
+            }
+        }
+
+        .app-version {
+            font-size: 1.25rem;
+            padding-top: 0.5rem;
+            padding-left: 0.5rem;
+        }
+    }
+}

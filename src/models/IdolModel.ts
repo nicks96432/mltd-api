@@ -7,7 +7,7 @@ const IdolSchema = new mongoose.Schema<Idol>(
         type: {
             type: String,
             enum: ["Princess", "Fairy", "Angel", "Ex"],
-            required: true,
+            required: true
         },
         name: { type: String, required: true, unique: true },
         age: { type: Number, required: true },
@@ -18,21 +18,21 @@ const IdolSchema = new mongoose.Schema<Idol>(
             type: {
                 bust: { type: Number, required: true },
                 waist: { type: Number, required: true },
-                hips: { type: Number, required: true },
+                hips: { type: Number, required: true }
             },
-            required: true,
+            required: true
         },
         bloodtype: {
             type: String,
             enum: ["A", "B", "O", "AB"],
-            required: true,
+            required: true
         },
         leftHand: { type: Boolean, required: true },
         origin: { type: String, required: true },
         hobby: { type: String, required: true },
         trick: { type: String, required: true },
         like: { type: String, required: true },
-        CV: { type: String, required: true },
+        CV: { type: String, required: true }
     },
     { strict: "throw" }
 );

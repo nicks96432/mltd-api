@@ -5,18 +5,18 @@ charset = utf-8
 end_of_line = lf
 indent_size = 4
 indent_style = space
-insert_final_newline = true
 quote_type = double
-trim_trailing_whitespace = true
 
-[*.json]
+[*.js,*.ts,*.jsx,*.tsx,*.scss]
+insert_final_newline = true
+
+[*.json,.eslintrc,.prettierrc]
 insert_final_newline = false
 
 [**.bundle.js,**.bundle.js.map]
-indent_style = unset
 indent_size = unset
-insert_final_newline = unset
-trim_trailing_whitespace = unset
+indent_style = unset
 
 [*.md]
+insert_final_newline = true
 trim_trailing_whitespace = false

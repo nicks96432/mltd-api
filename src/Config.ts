@@ -6,12 +6,12 @@ if (process.env.NODE_ENV !== "production") require("dotenv").config();
 const env = {
     nodeEnv: process.env.NODE_ENV,
     mongoUrl: process.env.MONGO_URL,
-    port: process.env.PORT,
+    port: process.env.PORT
 };
 
 let schema: any = {
     nodeEnv: Joi.string().valid("production", "development", "test").required(),
-    port: Joi.number().positive().default(48763),
+    port: Joi.number().positive().default(48763)
 };
 if (process.env.NODE_ENV !== "test") schema.mongoUrl = Joi.string().required();
 
@@ -26,7 +26,7 @@ if (error) throw new Error(`config validation failed: ${error.message}`);
 const config: Config = {
     nodeEnv: value.nodeEnv,
     mongoUrl: value.mongoUrl,
-    port: value.port,
+    port: value.port
 };
 
 export default config;
