@@ -1,0 +1,10 @@
+@import "../../pages/global";
+
+.changelog {
+    margin-top: 2rem;
+    width: $width;
+    li {
+        font-size: larger;
+        margin-top: 0.5rem;
+    }
+}

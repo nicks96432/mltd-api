@@ -32,7 +32,12 @@ const IdolSchema = new mongoose.Schema<Idol>(
         hobby: { type: String, required: true },
         trick: { type: String, required: true },
         like: { type: String, required: true },
-        CV: { type: String, required: true }
+        CV: { type: String, required: true },
+        color: {
+            type: String,
+            required: true,
+            validate: /^(?:#(?:[0-9a-f]{3}){1,2}|#(?:[0-9A-F]{3}){1,2})$/
+        }
     },
     { strict: "throw" }
 );

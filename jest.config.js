@@ -1,7 +1,7 @@
 module.exports = async () => {
     return {
         preset: "ts-jest",
-        slowTestThreshold: 20,
+        slowTestThreshold: 30,
         verbose: true
     };
 };

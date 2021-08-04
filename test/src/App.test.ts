@@ -41,7 +41,7 @@ describe("test MLTD idol API", () => {
                 );
             })
         );
-    });
+    }, 10000);
 
     it("testing bad requests", async () => {
         expect.assertions(20);

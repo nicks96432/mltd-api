@@ -4,7 +4,7 @@ import fastifyCors from "fastify-cors";
 import fastifyHelmet from "fastify-helmet";
 import fastifyCompress from "fastify-compress";
 import fastifyRateLimit from "fastify-rate-limit";
-import { ApiRoutes, DocRoutes } from "./routes";
+import Routes from "./routes";
 import Config from "./Config";
 
 const dev = Config.nodeEnv !== "production";
@@ -21,7 +21,7 @@ const App = fastify({
 
 App.register(async (instance, _opts, done) => {
     const app = Next({ dev });
-    const handler = DocRoutes.getRequestHandler(app);
+    const handler = app.getRequestHandler();
     await app.prepare();
     try {
         instance
@@ -44,7 +44,7 @@ App.register(fastifyCors)
     .register(fastifyCompress, {
         encodings: ["br", "gzip", "deflate", "identity"]
     })
-    .register(ApiRoutes)
+    .register(Routes)
     .register(fastifyRateLimit, {
         max: 5000,
         ban: 500000,

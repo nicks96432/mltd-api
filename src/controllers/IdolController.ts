@@ -1,4 +1,5 @@
-import { FastifyReply, FastifyRequest } from "fastify";
+import type { FastifyReply, FastifyRequest } from "fastify";
+import type { Idol } from "../types";
 import { IdolModel } from "../models";
 import App from "../App";
 
@@ -19,10 +20,10 @@ export const IdolController = {
             return;
         }
         try {
-            let idol = await IdolModel.findOne(
+            let idol: Idol | null = await IdolModel.findOne(
                 { id },
                 { _id: false, __v: false }
-            );
+            ).lean();
             if (idol !== null) reply.status(200).send(idol);
             else
                 reply
@@ -37,10 +38,12 @@ export const IdolController = {
     },
     getIdols: async (_req: FastifyRequest, reply: FastifyReply) => {
         try {
-            const idols = await IdolModel.find(
+            const idols: Idol[] = await IdolModel.find(
                 {},
                 { _id: false, __v: false }
-            ).sort({ id: 1 });
+            )
+                .lean()
+                .sort({ id: 1 });
             reply.status(200).send(idols);
         } catch (err) {
             reply

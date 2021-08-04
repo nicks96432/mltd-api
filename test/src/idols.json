@@ -18,7 +18,8 @@
         "trick": "製作點心",
         "hobby": "卡拉OK、長時間聊電話",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#e22b30"
     },
     "如月　千早": {
         "id": 2,
@@ -39,7 +40,8 @@
         "trick": "唱歌",
         "hobby": "鑑賞音樂、電影",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#2743d2"
     },
     "星井　美希": {
         "id": 3,
@@ -60,7 +62,8 @@
         "trick": "睡眠",
         "hobby": "和朋友聊天、指甲彩繪",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#b4e04b"
     },
     "萩原　雪歩": {
         "id": 4,
@@ -81,7 +84,8 @@
         "trick": "泡日本茶",
         "hobby": "撰寫MY詩集",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#d3dde9"
     },
     "高槻　やよい": {
         "id": 5,
@@ -102,7 +106,8 @@
         "trick": "節約、家庭菜園",
         "hobby": "黑白棋、棒球",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#f39939"
     },
     "菊地　真": {
         "id": 6,
@@ -123,7 +128,8 @@
         "trick": "空手道、舞蹈",
         "hobby": "所有運動",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#515558"
     },
     "水瀨　伊織": {
         "id": 7,
@@ -144,7 +150,8 @@
         "trick": "逛街購物",
         "hobby": "海外旅行、探訪美食",
         "leftHand": false,
-        "bloodtype": "AB"
+        "bloodtype": "AB",
+        "color": "#fd99e1"
     },
     "四条　貴音": {
         "id": 8,
@@ -165,7 +172,8 @@
         "trick": "直覺",
         "hobby": "觀星、歷史",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#a6126a"
     },
     "秋月　律子": {
         "id": 9,
@@ -186,7 +194,8 @@
         "trick": "分析＆實踐",
         "hobby": "考取證照、義工服務",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#01a860"
     },
     "三浦　あずさ": {
         "id": 10,
@@ -207,7 +216,8 @@
         "trick": "占卜",
         "hobby": "帶狗散步",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#9238be"
     },
     "双海　亜美": {
         "id": 11,
@@ -228,7 +238,8 @@
         "trick": "模仿",
         "hobby": "傳簡訊、環保",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#ffe43f"
     },
     "双海　真美": {
         "id": 12,
@@ -249,7 +260,8 @@
         "trick": "模仿",
         "hobby": "傳簡訊、盆栽",
         "leftHand": true,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#ffe43f"
     },
     "我那霸　響": {
         "id": 13,
@@ -270,7 +282,8 @@
         "trick": "各類家事",
         "hobby": "編織、桌球",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#01adb9"
     },
     "春日　未来": {
         "id": 14,
@@ -291,7 +304,8 @@
         "trick": "唱歌",
         "hobby": "蒐集可愛的髮夾",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#ea5b76"
     },
     "最上　静香": {
         "id": 15,
@@ -312,7 +326,8 @@
         "trick": "鋼琴",
         "hobby": "網球",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#6495cf"
     },
     "伊吹　翼": {
         "id": 16,
@@ -333,7 +348,8 @@
         "trick": "猜拳",
         "hobby": "訂定出遊計畫",
         "leftHand": true,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#fed552"
     },
     "田中　琴葉": {
         "id": 17,
@@ -354,7 +370,8 @@
         "trick": "擊劍",
         "hobby": "泡澡",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#92cfbb"
     },
     "島原　エレナ": {
         "id": 18,
@@ -375,7 +392,8 @@
         "trick": "跳森巴舞",
         "hobby": "派對",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#9bce92"
     },
     "佐竹　美奈子": {
         "id": 19,
@@ -396,7 +414,8 @@
         "trick": "料理",
         "hobby": "格鬥遊戲",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#58a6dc"
     },
     "所　惠美": {
         "id": 20,
@@ -417,7 +436,8 @@
         "trick": "記住別人的生日",
         "hobby": "卡拉OK",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#454341"
     },
     "徳川　まつり": {
         "id": 21,
@@ -438,7 +458,8 @@
         "trick": "演技",
         "hobby": "蒐集漫畫",
         "leftHand": false,
-        "bloodtype": "AB"
+        "bloodtype": "AB",
+        "color": "#5abfb7"
     },
     "箱崎　星梨花": {
         "id": 22,
@@ -459,7 +480,8 @@
         "trick": "敏捷犬指導手",
         "hobby": "小提琴",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#ed90ba"
     },
     "野々原　茜": {
         "id": 23,
@@ -480,7 +502,8 @@
         "trick": "直排輪",
         "hobby": "跑跳步",
         "leftHand": true,
-        "bloodtype": "AB"
+        "bloodtype": "AB",
+        "color": "#eb613f"
     },
     "望月　杏奈": {
         "id": 24,
@@ -501,7 +524,8 @@
         "trick": "打字",
         "hobby": "線上遊戲",
         "leftHand": false,
-        "bloodtype": "AB"
+        "bloodtype": "AB",
+        "color": "#7e6ca8"
     },
     "ロコ": {
         "id": 25,
@@ -522,7 +546,8 @@
         "trick": "閉著眼睛走路",
         "hobby": "手工藝",
         "leftHand": false,
-        "bloodtype": "AB"
+        "bloodtype": "AB",
+        "color": "#fff03c"
     },
     "七尾　百合子": {
         "id": 26,
@@ -543,7 +568,8 @@
         "trick": "轉筆",
         "hobby": "讀書",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#c7b83c"
     },
     "高山　紗代子": {
         "id": 27,
@@ -564,7 +590,8 @@
         "trick": "睡一晚就能活力十足",
         "hobby": "飼養刺蝟、寫日記",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#7f6575"
     },
     "松田　亜利沙": {
         "id": 28,
@@ -585,7 +612,8 @@
         "trick": "看穿偶像的易容",
         "hobby": "蒐集偶像資料、相機",
         "leftHand": false,
-        "bloodtype": "AB"
+        "bloodtype": "AB",
+        "color": "#b54461"
     },
     "高坂　海美": {
         "id": 29,
@@ -606,7 +634,8 @@
         "trick": "芭蕾舞",
         "hobby": "抱石攀岩",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#e9739b"
     },
     "中谷　育": {
         "id": 30,
@@ -627,7 +656,8 @@
         "trick": "早起",
         "hobby": "鑑賞動畫",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#f7e78e"
     },
     "天空橋　朋花": {
         "id": 31,
@@ -648,7 +678,8 @@
         "trick": "吵架、禮儀規矩",
         "hobby": "能夠讓粉絲高興的事",
         "leftHand": true,
-        "bloodtype": "AB"
+        "bloodtype": "AB",
+        "color": "#bee3e3"
     },
     "エミリー": {
         "id": 32,
@@ -669,7 +700,8 @@
         "trick": "日本舞蹈",
         "hobby": "玩歌牌",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#554171"
     },
     "北沢　志保": {
         "id": 33,
@@ -690,7 +722,8 @@
         "trick": "記憶力、集中力高",
         "hobby": "尋找喜歡的繪本",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#afa690"
     },
     "舞浜　歩": {
         "id": 34,
@@ -711,7 +744,8 @@
         "trick": "舞蹈",
         "hobby": "逛街購物",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#e25a9b"
     },
     "木下　ひなた": {
         "id": 35,
@@ -732,7 +766,8 @@
         "trick": "準確猜測天氣",
         "hobby": "園藝",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#d1342c"
     },
     "矢吹　可奈": {
         "id": 36,
@@ -753,7 +788,8 @@
         "trick": "合唱",
         "hobby": "將任何事物改編成歌",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#f5ad3b"
     },
     "横山　奈緒": {
         "id": 37,
@@ -774,7 +810,8 @@
         "trick": "精力充沛",
         "hobby": "尋訪大眾澡堂＆溫泉",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#788bc5"
     },
     "二階堂　千鶴": {
         "id": 38,
@@ -795,7 +832,8 @@
         "trick": "不會忘記人的名字和臉",
         "hobby": "在咖啡廳閱覽服裝雜誌",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#f19557"
     },
     "馬場　このみ": {
         "id": 39,
@@ -816,7 +854,8 @@
         "trick": "麻將",
         "hobby": "鑑賞北美戲劇",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#f1becb"
     },
     "大神　環": {
         "id": 40,
@@ -837,7 +876,8 @@
         "trick": "打水漂",
         "hobby": "探險",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#ee762e"
     },
     "豐川　風花": {
         "id": 41,
@@ -858,7 +898,8 @@
         "trick": "暫停呼吸、注射",
         "hobby": "捐血",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#7278a8"
     },
     "宮尾　美也": {
         "id": 42,
@@ -879,7 +920,8 @@
         "trick": "視力良好",
         "hobby": "圍棋、將棋",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#d7a96b"
     },
     "福田　のり子": {
         "id": 43,
@@ -900,7 +942,8 @@
         "trick": "駕駛機車",
         "hobby": "觀賞格鬥技對戰",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#eceb70"
     },
     "真壁　瑞希": {
         "id": 44,
@@ -921,7 +964,8 @@
         "trick": "舞棒",
         "hobby": "魔術",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#99b7dc"
     },
     "篠宮　可憐": {
         "id": 45,
@@ -942,7 +986,8 @@
         "trick": "撲克臉",
         "hobby": "芳香療法",
         "leftHand": false,
-        "bloodtype": "AB"
+        "bloodtype": "AB",
+        "color": "#b63b40"
     },
     "百瀨　莉緒": {
         "id": 46,
@@ -963,7 +1008,8 @@
         "trick": "化妝",
         "hobby": "瑜伽鍛鍊",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#f19591"
     },
     "永吉　昴": {
         "id": 47,
@@ -984,7 +1030,8 @@
         "trick": "變化球、各類家事",
         "hobby": "棒球",
         "leftHand": true,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#aeb49c"
     },
     "北上　麗花": {
         "id": 48,
@@ -1005,7 +1052,8 @@
         "trick": "肺活量大",
         "hobby": "爬山",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#6bb6b0"
     },
     "周防　桃子": {
         "id": 49,
@@ -1026,7 +1074,8 @@
         "trick": "記憶演技與台詞",
         "hobby": "蒐集可愛的貼紙",
         "leftHand": false,
-        "bloodtype": "B"
+        "bloodtype": "B",
+        "color": "#efb864"
     },
     "ジュリア": {
         "id": 50,
@@ -1047,7 +1096,8 @@
         "trick": "吉他",
         "hobby": "無",
         "leftHand": true,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#d7385f"
     },
     "白石　紬": {
         "id": 51,
@@ -1068,7 +1118,8 @@
         "trick": "和服的著裝、三味線",
         "hobby": "庭園、探訪日式甜點店",
         "leftHand": false,
-        "bloodtype": "AB"
+        "bloodtype": "AB",
+        "color": "#ebe1ff"
     },
     "桜守　歌織": {
         "id": 52,
@@ -1089,7 +1140,8 @@
         "trick": "合唱、高爾夫球",
         "hobby": "騎馬",
         "leftHand": false,
-        "bloodtype": "O"
+        "bloodtype": "O",
+        "color": "#274079"
     },
     "詩花": {
         "id": 53,
@@ -1110,6 +1162,7 @@
         "trick": "捷泳",
         "hobby": "蒐集音樂盒、機器人玩具",
         "leftHand": false,
-        "bloodtype": "A"
+        "bloodtype": "A",
+        "color": "#85ac84"
     }
 }

@@ -23,7 +23,8 @@ const idolExample = {
     trick: "唱歌",
     hobby: "蒐集可愛的髮夾",
     leftHand: false,
-    bloodtype: "O"
+    bloodtype: "O",
+    color: "#ea5b76"
 };
 
 const NotFoundExample = {
@@ -32,7 +33,7 @@ const NotFoundExample = {
 };
 
 const MainPage = () => (
-    <main id={Styles.main} className="container">
+    <main className={`${Styles.mainpage} container`}>
         <div className={Styles["mainpage-title-container"]}>
             <div className={Styles["mainpage-logo"]}>
                 <Image src="/logo512.png" alt="logo" width={512} height={512} />
@@ -57,7 +58,8 @@ const MainPage = () => (
             <hr />
         </div>
         <div className={Styles["mainpage-content"]}>
-            <p>還在施工中，現在只有一個功能@@</p>
+            <p>目前還是測試版，所有功能都有可能變更(雖然也只有一個功能@@)</p>
+            <p>這個網站可能會很慢，因為免費沒有好東西嘛 ¯\_(ツ)_/¯</p>
             <h1>用法說明</h1>
             <div>
                 base URL：<code>https://api.nicks96432.ml/mltd/v1/</code>
@@ -84,7 +86,7 @@ const MainPage = () => (
                     },
                     {
                         status: 500,
-                        description: "伺服器有bug，請到GitHub發issue",
+                        description: "伺服器有bug，請到GitHub發issue"
                     }
                 ]}
                 method="GET"
