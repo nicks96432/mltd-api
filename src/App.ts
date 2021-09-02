@@ -35,7 +35,7 @@ App.register(async (instance, _opts, done) => {
             });
         done();
     } catch (err) {
-        done(err);
+        if (err instanceof Error) done(err);
     }
 });
 

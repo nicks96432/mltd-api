@@ -17,7 +17,7 @@ describe("test MLTD idol API", () => {
                     url: "/mltd/v1/idols"
                 });
                 expect(response.statusCode).toEqual(200);
-                expect(response.body).toEqual(JSON.stringify(idolArray));
+                expect(JSON.parse(response.body)).toEqual(idolArray);
             })
         );
     }, 20000);
@@ -36,8 +36,8 @@ describe("test MLTD idol API", () => {
             requests.map(async request => {
                 const response = await App.inject(request);
                 expect(response.statusCode).toEqual(200);
-                expect(response.body).toEqual(
-                    JSON.stringify(idolArray[request.id - 1])
+                expect(JSON.parse(response.body)).toEqual(
+                    idolArray[request.id - 1]
                 );
             })
         );
@@ -64,12 +64,10 @@ describe("test MLTD idol API", () => {
                     url: `/mltd/v1/idols/${id}`
                 });
                 expect(response.statusCode).toEqual(400);
-                expect(response.body).toEqual(
-                    JSON.stringify({
-                        status: 400,
-                        message: `invalid idol ID: ${id}`
-                    })
-                );
+                expect(JSON.parse(response.body)).toEqual({
+                    status: 400,
+                    message: `invalid idol ID: ${id}`
+                });
             })
         );
     });
