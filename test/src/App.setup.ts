@@ -11,11 +11,7 @@ const mongod = new MongoMemoryServer();
 export const setupMongoDB = async () => {
     await mongod.start();
     const uri = mongod.getUri();
-    mongoose.set("useCreateIndex", true);
-    await mongoose.connect(uri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
+    await mongoose.connect(uri);
     await IdolModel.insertMany(idolArray);
 };
 

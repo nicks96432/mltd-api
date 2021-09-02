@@ -2,8 +2,6 @@ import mongoose from "mongoose";
 import App from "./App";
 import Config from "./Config";
 
-mongoose.set("useCreateIndex", true);
-
 mongoose.connection.once("open", async () => {
     console.log("connected to mongodb");
     try {
@@ -14,8 +12,4 @@ mongoose.connection.once("open", async () => {
     }
 });
 
-mongoose.connect(Config.mongoUrl!, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-});
+mongoose.connect(Config.mongoUrl!);

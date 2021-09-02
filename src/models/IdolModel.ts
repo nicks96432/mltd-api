@@ -20,7 +20,8 @@ const IdolSchema = new mongoose.Schema<Idol>(
                 waist: { type: Number, required: true },
                 hips: { type: Number, required: true }
             },
-            required: true
+            required: true,
+            _id: false
         },
         bloodtype: {
             type: String,
