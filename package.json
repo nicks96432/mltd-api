@@ -1,6 +1,6 @@
 {
     "name": "mltd-api",
-    "version": "0.1.1",
+    "version": "0.1.0-alpha-2",
     "description": "偶像大師 百萬人演唱會！ 劇場時光(MLTD) API",
     "author": "我可能很廢 <nicks96432@gmail.com>",
     "license": "MIT",
@@ -34,7 +34,6 @@
         "joi": "^17.4.2",
         "mongoose": "^6.0.5",
         "next": "^11.1.2",
-        "pino-pretty": "^7.0.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-json-view": "^1.21.3"
