@@ -13,7 +13,6 @@ const test = Config.nodeEnv === "test";
 const App = fastify({
     logger: {
         level: test ? "error" : "info",
-        prettyPrint: { colorize: dev },
         file: dev ? undefined : "./fastify.log"
     },
     pluginTimeout: 20000
