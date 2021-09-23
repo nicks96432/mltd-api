@@ -11,7 +11,8 @@ const OperationCard: IOperationCard = props => {
             <button
                 className={Styles["operation-card-title"]}
                 onClick={() => setExpand(!expand)}
-                style={{ borderBottom: expand ? "inherit" : 0, color: "" }}>
+                style={{ borderBottom: expand ? "inherit" : 0, color: "" }}
+            >
                 <span className={Styles["operation-card-method"]}>
                     {props.method}
                 </span>

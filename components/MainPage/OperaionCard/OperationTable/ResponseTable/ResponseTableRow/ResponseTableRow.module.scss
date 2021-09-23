@@ -4,22 +4,23 @@
     td {
         padding: 0.5rem 0;
 
-        >.response-status {
+        > .response-status {
             font-family: $code-font;
             display: table-cell;
             vertical-align: baseline;
         }
 
-        >.response-demo-selector{
+        > .response-demo-selector {
             font-size: smaller;
             margin: 0.5rem 0;
         }
-        
-        >.response-description {
+
+        > .response-description {
             margin: 1rem 0;
         }
 
-        >.response-example,>.response-example * {
+        > .response-example,
+        > .response-example * {
             font-family: $code-font;
             font-size: unset;
             color: unset;

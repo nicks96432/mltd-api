@@ -1,28 +1,28 @@
 {
-    "name": "MLTD Idol API doc",
-    "shortName": "MLTD Idol API documentation",
-    "start_url": ".",
-    "lang": "zh-TW",
     "background_color": "#ffffff",
-    "theme_color": "#ffffff",
-    "display": "standalone",
     "description": "MLTD台服偶像資訊API用法說明文檔",
     "dir": "auto",
+    "display": "standalone",
     "icons": [
         {
-            "src": "favicon.ico",
             "sizes": "64x64",
+            "src": "favicon.ico",
             "type": "image/x-icon"
         },
         {
+            "sizes": "192x192",
             "src": "logo192.png",
-            "type": "image/png",
-            "sizes": "192x192"
+            "type": "image/png"
         },
         {
+            "sizes": "512x512",
             "src": "logo512.png",
-            "type": "image/png",
-            "sizes": "512x512"
+            "type": "image/png"
         }
-    ]
+    ],
+    "lang": "zh-TW",
+    "name": "MLTD Idol API doc",
+    "shortName": "MLTD Idol API documentation",
+    "start_url": ".",
+    "theme_color": "#ffffff"
 }
