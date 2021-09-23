@@ -1,17 +1,12 @@
 root = true
 
-[*]
+[*.{js,ts,jsx,tsx,json,scss}]
 charset = utf-8
 end_of_line = lf
 indent_size = 4
 indent_style = space
-quote_type = double
-
-[*.js,*.ts,*.jsx,*.tsx,*.scss]
 insert_final_newline = true
-
-[*.json,.eslintrc,.prettierrc]
-insert_final_newline = false
+quote_type = double
 
 [**.bundle.js,**.bundle.js.map]
 indent_size = unset

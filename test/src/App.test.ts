@@ -4,7 +4,7 @@ import App from "../../src/App";
 
 describe("test MLTD idol API", () => {
     beforeAll(async () => await setupMongoDB());
-    afterAll(async () => await closeMongoDB(), 20000);
+    afterAll(async () => await closeMongoDB(), 30000);
 
     const methods: HTTPMethods[] = ["GET", "POST", "PUT", "PATCH", "DELETE"];
 
@@ -20,7 +20,7 @@ describe("test MLTD idol API", () => {
                 expect(JSON.parse(response.body)).toEqual(idolArray);
             })
         );
-    }, 20000);
+    }, 30000);
 
     const iteration = 1000;
 
