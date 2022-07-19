@@ -5,7 +5,7 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.15.4",
-        "@octokit/request": "^5.6.1",
+        "@octokit/request": "^5.6.3",
         "fastify": "^3.21.5",
         "fastify-compress": "^3.6.0",
         "fastify-cors": "^6.0.2",
